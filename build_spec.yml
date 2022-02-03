@@ -6,6 +6,7 @@ shell: bash
 env:
   exportedVariables:
     - BuildServiceDemoVersion
+    - RandomVar
 
 steps:
   - type: Command
