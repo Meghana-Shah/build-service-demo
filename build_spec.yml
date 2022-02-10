@@ -6,7 +6,6 @@ shell: bash
 env:
   exportedVariables:
     - BuildServiceDemoVersion
-    - TestVariable
 
 steps:
   - type: Command
@@ -20,9 +19,7 @@ steps:
     name: "Dockerizer"
     command: |
       BuildServiceDemoVersion=`echo ${OCI_BUILD_RUN_ID} | rev | cut -c 1-7`
-      TestVariable=''
       echo $BuildServiceDemoVersion
-      echo $TestVariable
       docker build -t build-service-demo .
       
 outputArtifacts:
