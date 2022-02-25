@@ -16,7 +16,7 @@ steps:
       mvn clean install
   - type: Command
     command: |
-      sleep 2000
+      sleep 600
   - type: Command
     timeoutInSeconds: 400
     name: "Dockerizer"
