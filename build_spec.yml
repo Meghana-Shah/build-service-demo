@@ -15,9 +15,6 @@ steps:
       echo $PATH
       mvn clean install
   - type: Command
-    command: |
-      sleep 2000
-  - type: Command
     timeoutInSeconds: 400
     name: "Dockerizer"
     command: |
