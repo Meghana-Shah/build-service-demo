@@ -23,6 +23,7 @@ steps:
     name: "See maven repo before build"
     command: |
       ls -lart /root/.m2/repository
+      echo "hello world"
   - type: Command
     name: "building the code"
     command: |
