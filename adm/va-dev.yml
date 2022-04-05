@@ -9,7 +9,7 @@ env:
   exportedVariables:
    - version
 steps:
-  - type: VulnerabilityAudit.        # required
+  - type: VulnerabilityAudit        # required
     name: "Vulnerability Audit Step" # optional 
     configuration:                   # required
       buildType: maven               # required
