@@ -9,16 +9,16 @@ env:
   exportedVariables:
    - version
 steps:
-  - type: VulnerabilityAudit
-    name: "Vulnerability Audit Step"
-    configuration:
-      buildType: maven
-      pomFilePath: ${OCI_PRIMARY_SOURCE_DIR}/pom.xml
-      maxPermissibleCvssV2Score: 10.0
-      maxPermissibleCvssV3Score: 10.0
-    knowledgeBaseId: ocid1.service.oc1.iad.amaaaaaab6fywtyalobukpan7s655fllbnh2ovdudmujhoil6zrytrkkcyaq
-    vulnerabilityAuditCompartmentId: ocid1.compartment.oc1..aaaaaaaaanb7pf7mjyey3ld4uffrtg4testumkcfgkv2j57kwr5juqf5o7aa
-    vulnerabilityAuditName: report1
+  - type: VulnerabilityAudit.        # required
+    name: "Vulnerability Audit Step" # optional 
+    configuration:                   # required
+      buildType: maven               # required
+      pomFilePath: ${OCI_PRIMARY_SOURCE_DIR}/pom.xml # required (Supports parameter substitution)
+      maxPermissibleCvssV2Score: 10.0                # optional (defaults to 0.0)
+      maxPermissibleCvssV3Score: 10.0                # optional (defaults to 0.0)
+    knowledgeBaseId: ocid1.service.oc1.iad.amaaaaaab6fywtyalobukpan7s655fllbnh2ovdudmujhoil6zrytrkkcyaq # required (Supports parameter substitution)
+    vulnerabilityAuditCompartmentId: ocid1.compartment.oc1..aaaaaaaaanb7pf7mjyey3ld4uffrtg4testumkcfgkv2j57kwr5juqf5o7aa # optional (Supports parameter substitution) defaults to KB compartmentId
+    vulnerabilityAuditName: report1.  # optional (Supports parameter substitution), name will be auto generated.
   - type: Command
     name: "See maven repo before build"
     command: |
